@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import { SytledItem, ImageContainer } from "./style";
 
 export const Product = ({ product, addProductToCart }) => {

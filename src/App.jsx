@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import ProductList from "./components/ProductList";
 import CartList from "./components/CartList";
-import axios from "axios";
 import { api } from "./services/api";
 import { Body } from "./style";
 
@@ -28,7 +27,7 @@ function App() {
   });
 
   const addProductToCart = (product) => {
-    if (listInCart.includes(product)) {
+    if (listInCart.some((productCart) => productCart.id == product.id)) {
       alert("esse item ja esta no carrinho!");
     } else {
       setListInCart([...listInCart, product]);
